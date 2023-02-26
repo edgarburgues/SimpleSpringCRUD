@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base de datos</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/c3b51bf82a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="container flex space-between flex-top">
+    <hgroup>
+        <h1>CRUD en SpringBoot</h1>
+        <h2>Por: Edgar Fernández</h2>
+    </hgroup>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="table.html">Ver tabla</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main class="container  no-padding-top">
+    <div class="flex">
+        <h2>Agregar alumno</h2>
+        <button id="btnShowInsert" class="square-button" type="button" onclick="showInsertar()"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <form id="formInsertar" class="none flex-column ">
+            <div class="flex space-between">
+                <label for="firstname">
+                    First name
+                    <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+                </label>
+
+                <label for="lastname">
+                    Last name
+                    <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+                </label>
+
+                <label for="nota">
+                    Nota
+                    <input type="text" id="nota" name="nota" placeholder="Nota" required>
+                </label>
+            </div>
+            <button class="width-100 button-height" type="submit" onclick="insertarAlumno2()">Agregar Alumno</button>
+    </form>
+
+
+    <h2>Tabla de alumnos</h2>
+
+    <table id="alumnos">
+        <thead>
+            <tr>
+                <th class="width-10p">ID</th>
+                <th class="">Nombre</th>
+                <th class="">Apellidos</th>
+                <th class="">Nota</th>
+                <th class="width-20">Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbodyAlumnos">
+
+        </tbody>
+    </table>
+
+
+</main>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="js/loadTable.js"></script>
+<script src="js/delete.js"></script>
+<script src="js/edit.js"></script>
+<script src="js/insert.js"></script>
+</body>
+</html>
